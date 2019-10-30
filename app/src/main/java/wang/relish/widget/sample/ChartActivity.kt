@@ -1,4 +1,4 @@
-package wang.relish.widget.graph.sample
+package wang.relish.widget.sample
 
 import android.app.Activity
 import android.os.Bundle
@@ -32,7 +32,8 @@ class ChartActivity : AppCompatActivity() {
 
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val params = ccv.layoutParams
-                val screenWidth = getScreenWidth(this@ChartActivity)
+                val screenWidth =
+                    getScreenWidth(this@ChartActivity)
                 params.width = (screenWidth.toFloat() * progress.toFloat() / 100.0).toInt()
                 ccv.layoutParams = params
                 tv_percent.text = String.format("%d%%", progress)
@@ -46,7 +47,14 @@ class ChartActivity : AppCompatActivity() {
         fun generateData(): ChartData {
             val items = arrayListOf<ChartData.Column>()
             for (i in 0..12) {
-                items.add(generateItem(String.format("%02d", i + 1)))
+                items.add(
+                    generateItem(
+                        String.format(
+                            "%02d",
+                            i + 1
+                        )
+                    )
+                )
             }
             return generateItem(items)
         }

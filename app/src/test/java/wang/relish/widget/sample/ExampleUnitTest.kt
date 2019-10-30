@@ -1,4 +1,4 @@
-package wang.relish.widget.graph.sample
+package wang.relish.widget.sample
 
 import org.junit.Test
 

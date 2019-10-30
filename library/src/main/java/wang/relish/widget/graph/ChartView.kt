@@ -11,16 +11,13 @@ import android.view.View
  * @author relish
  * @since 20191010
  */
-class ChartView : View {
+class ChartView(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
 
     private var mDrawable: ChartDrawable? = null
-
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
-
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)
-            : super(context, attrs, defStyleAttr)
 
     private var width = -1f
     private var height = -1f

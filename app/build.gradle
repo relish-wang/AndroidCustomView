@@ -6,7 +6,7 @@ android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
     defaultConfig {
-        applicationId "wang.relish.widget.graph.sample"
+        applicationId "wang.relish.widget.sample"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode 1
@@ -25,6 +25,7 @@ dependencies {
     implementation deps.ktx
     implementation deps.kotlin_stdlib
     implementation deps.appcompat
+    implementation deps.cardview
     implementation deps.recyclerview
     implementation deps.constraintlayout
     implementation project(':library')
