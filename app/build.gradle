@@ -22,14 +22,22 @@ android {
 }
 
 dependencies {
-    implementation deps.ktx
-    implementation deps.kotlin_stdlib
     implementation deps.appcompat
     implementation deps.cardview
     implementation deps.recyclerview
     implementation deps.constraintlayout
+    implementation deps.glide
+    implementation deps.ktx
+    implementation deps.kotlin_stdlib
+    implementation deps.coroutines
+    implementation deps.coroutines_android
     implementation project(':library')
 }
 repositories {
     mavenCentral()
+}
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
 }

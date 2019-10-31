@@ -9,7 +9,7 @@
     android:background="@android:color/white"
     android:focusable="true"
     android:foreground="?android:selectableItemBackground"
-    app:cardCornerRadius="0dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="1dp">
 
     <LinearLayout
@@ -50,8 +50,8 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="5dp"
             android:ellipsize="end"
-            android:maxLines="3"
-            android:textColor="@color/text_primary_dark"
+            android:maxLines="5"
+            android:textColor="#999999"
             android:textSize="14sp"
             tools:text="这个好家伙是这么做的: 先这样，再这样, 接着这样，然后这样, 最后来个托马斯回旋加速炮就搞定了！没明白的再看一遍：先这样，再这样, 接着这样，然后这样, 最后来个托马斯回旋加速炮就搞定了！" />
 
