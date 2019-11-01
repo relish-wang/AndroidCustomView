@@ -34,7 +34,7 @@ class MultiBarActivity : BaseDisplayActivity() {
         private val RANDOM = Random()
 
         fun generate(value: Double = -1.0): MultiPoints {
-            val count = RANDOM.nextInt(10) + 3
+            val count = RANDOM.nextInt(10) + 2
             val list = arrayListOf<IEndpoint>()
             for (i in 0..count) {
                 list.add(generate("第${i + 1}根", value))
