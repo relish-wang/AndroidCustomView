@@ -58,8 +58,9 @@ abstract class IView<Drawable : IDrawable<Data>, Data> : View {
 
     override fun onDraw(canvas: Canvas) {
         if (mDrawable == null) return
+        mDrawable!!.setBounds(0, 0, width.toInt(), (width * totalHeightRatio()).toInt())
         if (abs(width - 1f) <= ZERO_BIGGER) return
-        mDrawable!!.draw(canvas, width)
+        mDrawable!!.draw(canvas)
     }
 
     companion object {

@@ -59,13 +59,11 @@ open class ChartDrawable constructor(
         updateSelection()
     }
 
-    private var width: Float = 0F
-
     /**
      * 绘制自定义Drawable的图案
      */
-    override fun draw(canvas: Canvas, w: Float) {
-        width = w
+    override fun draw(canvas: Canvas) {
+        val w = bounds.width().toFloat()
         // 画最值
         drawMostValueInternal(canvas, w, Dimens.TEXT_AREA_HEIGHT * w)
         // 画折线图和日期
@@ -401,7 +399,7 @@ open class ChartDrawable constructor(
     ): Boolean {
         val x = event.x
         val y = event.y
-        invokableRect(width)
+        invokableRect()
         if (!invokableArea!!.contains(x, y)) return consumer.accept(event)
 
         if (event.action == MotionEvent.ACTION_DOWN ||
@@ -417,7 +415,8 @@ open class ChartDrawable constructor(
 
     private var invokableArea: RectF? = null
 
-    private fun invokableRect(w: Float) {
+    private fun invokableRect() {
+        val w = bounds.width().toFloat()
         val l = 0F
         val t = w * Dimens.TEXT_AREA_HEIGHT
         val h = w * (Dimens.CHART_AREA_HEIGHT
@@ -435,7 +434,7 @@ open class ChartDrawable constructor(
     }
 
     private fun locateIndex(x: Float): Int {
-        val wUnit = width / mData.items.size
+        val wUnit = bounds.width() / mData.items.size
         return (x / wUnit).toInt()
     }
 }
