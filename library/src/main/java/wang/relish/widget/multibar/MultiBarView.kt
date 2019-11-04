@@ -6,20 +6,19 @@ import android.util.AttributeSet
 import wang.relish.widget.IView
 
 /**
- * 三根bar自定义View
+ * 多根bar
  *
  * @author wangxin
  * @since 20191028
  */
-class MultiBarView(
-    context: Context,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) : IView<MultiBarDrawable<IThreePoints>, IThreePoints>(
-    context,
-    attrs,
-    defStyleAttr
-) {
+class MultiBarView : IView<MultiBarDrawable, IMultiPoints> {
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)
+            : super(context, attrs, defStyleAttr)
 
     init {
         setLayerType(LAYER_TYPE_SOFTWARE, null)
@@ -29,7 +28,7 @@ class MultiBarView(
         return MultiBarDrawable.TOTAL_HEIGHT
     }
 
-    override fun newDrawable(data: IThreePoints): MultiBarDrawable<IThreePoints> {
+    override fun newDrawable(data: IMultiPoints): MultiBarDrawable {
         return MultiBarDrawable(data)
     }
 

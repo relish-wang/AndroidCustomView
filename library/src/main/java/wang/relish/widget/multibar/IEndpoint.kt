@@ -1,12 +1,14 @@
 package wang.relish.widget.multibar
 
+import android.os.Parcelable
+
 /**
  * 端点数据
  *
  * @author wangxin
  * @since 20191028
  */
-interface IEndpoint {
+interface IEndpoint :Parcelable {
     /**
      * 端点数值(单位: mm)
      */

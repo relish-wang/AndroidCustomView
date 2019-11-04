@@ -4,21 +4,21 @@ import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
-import kotlin.math.pow
+import kotlin.math.abs
 
 /**
  * @author wangxin
  * @since 20191030
  */
-abstract class IView<Drawable : IDrawable<Data>, Data>(
-    context: Context,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
+abstract class IView<Drawable : IDrawable<Data>, Data> : View {
 
-    protected var width = -1f
+    constructor(context: Context) : super(context)
 
-    protected var mDrawable: Drawable? = null
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)
+            : super(context, attrs, defStyleAttr)
+
 
     /**
      * View高度占View宽度的比例
@@ -30,6 +30,8 @@ abstract class IView<Drawable : IDrawable<Data>, Data>(
      */
     protected abstract fun newDrawable(data: Data): Drawable
 
+
+    internal var mDrawable: Drawable? = null
     /**
      * 更新数据
      */
@@ -41,6 +43,8 @@ abstract class IView<Drawable : IDrawable<Data>, Data>(
         }
         invalidate()
     }
+
+    internal var width = -1f
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -54,7 +58,11 @@ abstract class IView<Drawable : IDrawable<Data>, Data>(
 
     override fun onDraw(canvas: Canvas) {
         if (mDrawable == null) return
-        if (width - 1f <= 10.0.pow(-6.0)) return
+        if (abs(width - 1f) <= ZERO_BIGGER) return
         mDrawable!!.draw(canvas, width)
+    }
+
+    companion object {
+        const val ZERO_BIGGER = 0.000_001F
     }
 }

@@ -6,16 +6,17 @@ import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
 import wang.relish.widget.IDrawable
 import java.util.*
+import kotlin.math.pow
 
 /**
  * @author wangxin
  * @since 20191028
  */
 class MultiBarDrawable(
-    data: IThreePoints
-) : IDrawable<IThreePoints>(data) {
+    data: IMultiPoints
+) : IDrawable<IMultiPoints>(data) {
 
-    override fun update(data: IThreePoints) {
+    override fun update(data: IMultiPoints) {
         mData = data
     }
 
@@ -24,8 +25,8 @@ class MultiBarDrawable(
     override fun draw(canvas: Canvas, w: Float) {
         ///////////////////////////////////// 1 画三条bar /////////////////////////////////////
         val xCenter = w / 2.0f
-        val yCenter = (w * (TOTAL_HEIGHT - (Dimens.ENDPOINT_TEXT_SIZE
-                + Dimens.ENDPOINT_TXT_MARGIN_CLOSE + Dimens.BAR_LENGTH / 2))).toFloat()
+        val yCenter = (w * (Dimens.ENDPOINT_TEXT_SIZE
+                + Dimens.ENDPOINT_TXT_MARGIN_CLOSE + Dimens.BAR_LENGTH))
         val endPoints = mData.endPoints()
         val mMin = mData.min()
         val dataCount = endPoints.size
@@ -148,7 +149,7 @@ class MultiBarDrawable(
         yValuePoint: Float
     ) {
         // -1代表左边;1代表右边
-        @IntRange(from = -1, to = 1) val dir = if (xValuePoint + Math.pow(10.0, -5.0) >= w / 2)
+        @IntRange(from = -1, to = 1) val dir = if (xValuePoint + Dimens.ZERO_BIGGER >= w / 2)
             1
         else
             -1
@@ -264,6 +265,8 @@ class MultiBarDrawable(
             val ENDPOINT_TEXT_SIZE = 28.0f / 750.0f
             /** 三端点浮窗文字大小  */
             val POPUP_TEXT_SIZE = 18.0f / 750.0f
+
+            val ZERO_BIGGER = 10.0.pow(-5.0)
         }
     }
 
