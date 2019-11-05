@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
                 Card(
                     ChartActivity::class.java,
                     R.drawable.ic_sample_chart,
-                    "二阶贝塞尔曲线图",
-                    "运用二阶贝塞尔曲线创建Path, 结合线性渐变(LinearGradient, 用于绘制曲线图底部渐变背景), 完成曲线图的绘制。",
+                    "三次贝塞尔曲线图",
+                    "运用三次贝塞尔曲线创建Path, 结合线性渐变(LinearGradient, 用于绘制曲线图底部渐变背景), 完成曲线图的绘制。",
                     600,
                     556
                 ),
