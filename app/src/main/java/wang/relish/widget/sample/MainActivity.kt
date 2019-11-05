@@ -13,6 +13,7 @@ import wang.relish.widget.sample.chore.SpaceItemDecoration
 import wang.relish.widget.sample.chore.WaterFallAdapter
 import wang.relish.widget.sample.chore.dp2px
 import wang.relish.widget.sample.sample.chart.ChartActivity
+import wang.relish.widget.sample.sample.jointpillar.JointPillarActivity
 import wang.relish.widget.sample.sample.multibar.MultiBarActivity
 
 class MainActivity : AppCompatActivity() {
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             return arrayListOf(
                 Card(
                     ChartActivity::class.java,
-                    R.drawable.ic_cover_chart,
+                    R.drawable.ic_sample_chart,
                     "二阶贝塞尔曲线图",
                     "运用二阶贝塞尔曲线创建Path, 结合线性渐变(LinearGradient, 用于绘制曲线图底部渐变背景), 完成曲线图的绘制。",
                     600,
@@ -79,11 +80,19 @@ class MainActivity : AppCompatActivity() {
                 ),
                 Card(
                     MultiBarActivity::class.java,
-                    R.drawable.ic_cover_chart,
+                    R.drawable.ic_sample_multibar,
                     "多根Bar",
                     "从中心散射开的多根带进度的Bar",
-                    600,
-                    556
+                    729,
+                    626
+                ),
+                Card(
+                    JointPillarActivity::class.java,
+                    R.drawable.ic_sample_jointpillar,
+                    "多级节柱",
+                    "左侧还有个数值跟随的小窗口",
+                    522,
+                    496
                 )
             )
         }

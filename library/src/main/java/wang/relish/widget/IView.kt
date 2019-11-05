@@ -4,6 +4,9 @@ import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
+import java.lang.reflect.Constructor
+import java.lang.reflect.InvocationTargetException
+import java.lang.reflect.ParameterizedType
 import kotlin.math.abs
 
 /**
@@ -27,15 +30,37 @@ abstract class IView<Drawable : IDrawable<Data>, Data> : View {
 
     /**
      * 新建自定义Drawable
+     * 建议子类重写(反射效率较低)
      */
-    protected abstract fun newDrawable(data: Data): Drawable
+    open fun newDrawable(data: Data): Drawable? {
+        try {
+            @Suppress("UNCHECKED_CAST") val entityClass = (javaClass
+                .genericSuperclass as ParameterizedType)
+                .actualTypeArguments[0] as Class<Drawable>
+
+            @Suppress("UNCHECKED_CAST") val constructor = entityClass
+                .declaredConstructors[0] as Constructor<Drawable>
+            constructor.isAccessible = true
+            return constructor.newInstance(data)
+        } catch (e: InstantiationException) {
+            e.printStackTrace()
+            return null
+        } catch (e: IllegalAccessException) {
+            e.printStackTrace()
+            return null
+        } catch (e: InvocationTargetException) {
+            e.printStackTrace()
+            return null
+        }
+
+    }
 
 
     internal var mDrawable: Drawable? = null
     /**
      * 更新数据
      */
-    fun update(data: Data) {
+    open fun update(data: Data) {
         if (mDrawable != null) {
             mDrawable!!.update(data)
         } else {

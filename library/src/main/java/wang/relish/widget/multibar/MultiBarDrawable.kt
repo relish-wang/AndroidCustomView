@@ -16,10 +16,6 @@ class MultiBarDrawable(
     data: IMultiPoints
 ) : IDrawable<IMultiPoints>(data) {
 
-    override fun update(data: IMultiPoints) {
-        mData = data
-    }
-
     private val path = Path()
 
     override fun draw(canvas: Canvas) {

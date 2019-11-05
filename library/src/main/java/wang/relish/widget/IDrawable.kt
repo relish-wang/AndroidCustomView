@@ -15,7 +15,9 @@ abstract class IDrawable<Data>(
 
     internal var mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    abstract fun update(data: Data)
+    open fun update(data: Data){
+        mData = data
+    }
 
     override fun setAlpha(alpha: Int) {
         mPaint.alpha = alpha
