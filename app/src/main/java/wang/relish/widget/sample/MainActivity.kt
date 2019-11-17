@@ -12,6 +12,7 @@ import wang.relish.widget.sample.chore.Card
 import wang.relish.widget.sample.chore.SpaceItemDecoration
 import wang.relish.widget.sample.chore.WaterFallAdapter
 import wang.relish.widget.sample.chore.dp2px
+import wang.relish.widget.sample.sample.surface.SurfaceViewActivity
 import wang.relish.widget.sample.sample.chart.ChartActivity
 import wang.relish.widget.sample.sample.jointpillar.JointPillarActivity
 import wang.relish.widget.sample.sample.multibar.MultiBarActivity
@@ -93,6 +94,14 @@ class MainActivity : AppCompatActivity() {
                     "左侧还有个数值跟随的小窗口",
                     522,
                     496
+                ),
+                Card(
+                    SurfaceViewActivity::class.java,
+                    R.drawable.ic_sample_jointpillar,
+                    "Test",
+                    "Android群英传",
+                    1000,
+                    1
                 )
             )
         }

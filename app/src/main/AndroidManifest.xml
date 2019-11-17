@@ -24,6 +24,7 @@
         <activity android:name=".sample.chart.ChartActivity" />
         <activity android:name=".sample.multibar.MultiBarActivity" />
         <activity android:name=".sample.jointpillar.JointPillarActivity" />
+        <activity android:name=".sample.surface.SurfaceViewActivity"/>
     </application>
 
 </manifest>
