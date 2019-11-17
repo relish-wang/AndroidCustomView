@@ -24,7 +24,7 @@ class MultiBarActivity : BaseDisplayActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multi_bar)
 
-        val data = generate()
+        val data = generate(3)
         multiBarView.update(data)
     }
 
@@ -33,8 +33,8 @@ class MultiBarActivity : BaseDisplayActivity() {
 
         private val RANDOM = Random()
 
-        fun generate(value: Double = -1.0): MultiPoints {
-            val count = RANDOM.nextInt(10) + 2
+        fun generate(c: Int? = null, value: Double = -1.0): MultiPoints {
+            val count = c ?: RANDOM.nextInt(10) + 3
             val list = arrayListOf<IEndpoint>()
             for (i in 0..count) {
                 list.add(generate("第${i + 1}根", value))

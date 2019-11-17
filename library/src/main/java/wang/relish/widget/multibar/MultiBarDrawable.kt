@@ -16,13 +16,10 @@ class MultiBarDrawable(
     data: IMultiPoints
 ) : IDrawable<IMultiPoints>(data) {
 
-    override fun update(data: IMultiPoints) {
-        mData = data
-    }
-
     private val path = Path()
 
-    override fun draw(canvas: Canvas, w: Float) {
+    override fun draw(canvas: Canvas) {
+        val w = bounds.width().toFloat()
         ///////////////////////////////////// 1 画三条bar /////////////////////////////////////
         val xCenter = w / 2.0f
         val yCenter = (w * (Dimens.ENDPOINT_TEXT_SIZE

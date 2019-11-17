@@ -1,6 +1,5 @@
 package wang.relish.widget
 
-import android.graphics.Canvas
 import android.graphics.ColorFilter
 import android.graphics.Paint
 import android.graphics.PixelFormat
@@ -16,12 +15,8 @@ abstract class IDrawable<Data>(
 
     internal var mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    abstract fun draw(canvas: Canvas, w: Float)
-
-    abstract fun update(data: Data)
-
-    override fun draw(canvas: Canvas) {
-        throw UnsupportedOperationException("please use #draw(Canvas canvas, float w)")
+    open fun update(data: Data){
+        mData = data
     }
 
     override fun setAlpha(alpha: Int) {
