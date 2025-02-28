@@ -3,17 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.buildTools
+    compileSdkVersion 34
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
+        minSdkVersion 21
+        targetSdkVersion 34
+    }
+    androidExtensions {
+        experimental = true
     }
 
     buildTypes {
@@ -22,13 +21,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'wang.relish.widget'
 
 }
 
 dependencies {
-    implementation deps.ktx
-    implementation deps.kotlin_stdlib
-    implementation deps.appcompat
+    implementation "androidx.core:core-ktx:1.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+    implementation "androidx.appcompat:appcompat:1.1.0"
 }
 repositories {
     mavenCentral()
