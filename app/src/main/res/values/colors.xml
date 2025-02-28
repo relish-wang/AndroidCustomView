@@ -6,4 +6,6 @@
     <color name="text_primary_dark">#DE000000</color>
     <color name="text_primary_light">#DE000000</color>
     <color name="primary_text">#444444</color>
+    <color name="link_color">#133667</color>
+    <color name="link_night_color">#C6D9EF</color>
 </resources>

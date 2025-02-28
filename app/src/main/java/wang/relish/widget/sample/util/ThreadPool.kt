@@ -1,4 +1,4 @@
-package wang.relish.widget.sample.sample.surface
+package wang.relish.widget.sample.util
 
 import android.os.Handler
 import android.os.Looper

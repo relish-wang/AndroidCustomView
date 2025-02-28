@@ -15,6 +15,7 @@ import wang.relish.widget.sample.chore.dp2px
 import wang.relish.widget.sample.sample.chart.ChartActivity
 import wang.relish.widget.sample.sample.jointpillar.JointPillarActivity
 import wang.relish.widget.sample.sample.multibar.MultiBarActivity
+import wang.relish.widget.sample.sample.rich.RichTextActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -93,6 +94,14 @@ class MainActivity : AppCompatActivity() {
                     "左侧还有个数值跟随的小窗口",
                     522,
                     496
+                ),
+                Card(
+                    RichTextActivity::class.java,
+                    R.drawable.ic_launcher_background,
+                    "富文本",
+                    "测试富文本",
+                    100,
+                    100
                 )
             )
         }
