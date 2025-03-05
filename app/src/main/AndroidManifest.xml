@@ -26,6 +26,7 @@
         <activity android:name=".sample.multibar.MultiBarActivity" />
         <activity android:name=".sample.jointpillar.JointPillarActivity" />
         <activity android:name=".sample.rich.RichTextActivity" />
+        <activity android:name=".sample.dash.DashActivity" />
     </application>
 
 </manifest>

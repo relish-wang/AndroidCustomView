@@ -13,6 +13,7 @@ import wang.relish.widget.sample.chore.SpaceItemDecoration
 import wang.relish.widget.sample.chore.WaterFallAdapter
 import wang.relish.widget.sample.chore.dp2px
 import wang.relish.widget.sample.sample.chart.ChartActivity
+import wang.relish.widget.sample.sample.dash.DashActivity
 import wang.relish.widget.sample.sample.jointpillar.JointPillarActivity
 import wang.relish.widget.sample.sample.multibar.MultiBarActivity
 import wang.relish.widget.sample.sample.rich.RichTextActivity
@@ -100,6 +101,14 @@ class MainActivity : AppCompatActivity() {
                     R.drawable.ic_launcher_background,
                     "富文本",
                     "测试富文本",
+                    100,
+                    100
+                ),
+                Card(
+                    DashActivity::class.java,
+                    R.drawable.ic_launcher_background,
+                    "下划线",
+                    "下划线",
                     100,
                     100
                 )
