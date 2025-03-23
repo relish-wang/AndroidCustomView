@@ -1,4 +1,4 @@
-package wang.relish.widget.sample.sample.dash
+package wang.relish.widget.sample.sample.rich
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,7 +6,6 @@ import android.graphics.DashPathEffect
 import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 import wang.relish.widget.sample.util.dpF
 

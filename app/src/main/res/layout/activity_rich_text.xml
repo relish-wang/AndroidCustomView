@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".sample.rich.RichTextActivity">
 
     <TextView
@@ -12,4 +13,35 @@
         android:textSize="16sp"
         android:layout_gravity="center"
         tools:ignore="MissingConstraints" />
-</FrameLayout>
+
+    <wang.relish.widget.sample.sample.rich.DashedUnderlineTextView
+        android:id="@+id/tvTitle"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:includeFontPadding="true"
+        android:text="塞尔达传说：旷野之息"
+        android:textColor="#CCCCCC"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <wang.relish.widget.sample.sample.rich.ClickableDrawableTextView
+        android:id="@+id/tvClickableImage"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:includeFontPadding="true"
+        android:text="好的，我现在要解决用户的问题：如何创建一个自定义的ImageSpan，支持设置图片大小、点击事件以及点击区域。首先，我需要回顾一下搜索结果中的相关内容，看看有没有相关的解决方法或者例子。"
+        android:textColor="#CCCCCC"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Русский"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/times_new_roman"
+        android:text="Русский"/>
+</LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".sample.dash.DashActivity">
 
-    <wang.relish.widget.sample.sample.dash.DashedUnderlineTextView
+    <wang.relish.widget.sample.sample.rich.DashedUnderlineTextView
         android:id="@+id/tvTitle"
         android:layout_height="wrap_content"
         android:layout_width="0dp"
